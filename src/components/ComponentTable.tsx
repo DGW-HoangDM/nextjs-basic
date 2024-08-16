@@ -1,35 +1,50 @@
 import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
 
-const ComponentTable = () => {
+interface Iprops {
+  blogs: IBlog[];
+}
+
+const handleEdit = () => {
+  console.log('Edit button clicked');
+}
+
+const handleView = () => {
+  console.log('View button clicked');
+}
+
+const handleDelete = () => {
+  console.log('Delete button clicked');
+}
+
+const ComponentTable = (props: Iprops) => {
+  const { blogs } = props;
+  console.log('check blog', blogs);
   return (
     <Table striped bordered hover responsive="md">
       <thead>
         <tr>
           <th>#</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Username</th>
+          <th>Author</th>
+          <th>Title</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Larry the Bird</td>
-          <td>Thanord</td>
-          <td>@twitter</td>
-        </tr>
+        {blogs?.map((item, index) => {
+          return (
+            <tr key={item.id}>
+              <td>{index + 1}</td>
+              <td>{item.author}</td>
+              <td>{item.title}</td>
+              <td>
+                <Button as="a" variant="primary" onClick={() => handleEdit()}>Edit</Button>
+                <Button className='mx-2' as="a" variant="success" onClick={() => handleView()}>View</Button>
+                <Button as="a" variant="danger" onClick={() => handleDelete()}>Delete</Button>
+              </td>
+            </tr>
+          )
+        })}
       </tbody>
     </Table>
   );
