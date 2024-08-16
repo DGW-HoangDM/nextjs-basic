@@ -1,7 +1,12 @@
+"use client"
+
 import './globals.css'
 import { Inter } from 'next/font/google'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-const inter = Inter({ subsets: ['latin'] })
+import Container from 'react-bootstrap/Container';
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 export const metadata = {
   title: 'Create Next App',
@@ -15,8 +20,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        {children}
+      <body>
+        <Header />
+        <Container>
+          {children}
+        </Container>
+        <Footer />
       </body>
     </html>
   )
