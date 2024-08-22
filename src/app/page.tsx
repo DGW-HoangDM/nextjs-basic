@@ -1,9 +1,11 @@
-'use client'
 import Link from 'next/link';
-import ComponentTable from "../components/ComponentTable";
 import { useState, useEffect } from "react";
-import useSWR from "swr";
-const fetcher = (url:string) => fetch(url).then((res) => res.json());
+
+import type { Metadata } from 'next'
+export const metadata: Metadata = {
+  title: 'Home page',
+  description: 'This is the homepage',
+}
 
 export default function Home() {
   // const [blog, setBlog] = useState(0);
@@ -18,21 +20,9 @@ export default function Home() {
   //   fetchData();
   // }, []);
 
-  const { data, error, isLoading } = useSWR(
-    "http://localhost:8000/blogs",
-    fetcher,
-    {
-      revalidateIfStale: false,
-      revalidateOnFocus: false,
-      revalidateOnReconnect: false
-    }
-  );
-
-  if (!data) return <div>chargement...</div>
-  
   return (
     <>
-      <h1>This page Top</h1>
+      <h1>This Home Page</h1>
       <ul>
         <li>
           <Link href="/youtobe">Youtobe</Link>
@@ -44,7 +34,6 @@ export default function Home() {
           <Link href="/tiktok">Tiktok</Link>
         </li>
       </ul>
-      <ComponentTable blogs={data}/>
     </>
   )
 }

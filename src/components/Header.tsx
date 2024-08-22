@@ -13,12 +13,13 @@ function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
+            <Link className='nav-link' href="/blog">Blog</Link>
             <Link className='nav-link' href="/youtobe">Youtobe</Link>
             <Link className='nav-link' href="/facebook">Facebook</Link>
             <Link className='nav-link' href="/tiktok">Tiktok</Link>
           </Nav>
         </Navbar.Collapse>
-      </Container>
+      </Container>      
     </Navbar>
   );
 }
