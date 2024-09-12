@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button"
 
 import type { Metadata } from 'next'
 export const metadata: Metadata = {
@@ -22,7 +23,10 @@ export default function Home() {
 
   return (
     <>
-      <h1>This Home Page</h1>
+      <h1 className="text-3xl font-bold underline text-red-600">This Home Page</h1>
+      <div>
+        <Button>Click me</Button>
+      </div>
       <ul>
         <li>
           <Link href="/youtobe">Youtobe</Link>

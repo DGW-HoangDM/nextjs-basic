@@ -1,8 +1,8 @@
 "use client"
 
 import './globals.css'
-import { Inter } from 'next/font/google'
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import { Inter } from 'next/font/google'
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Container from 'react-bootstrap/Container';
 import Header from "../components/Header";
