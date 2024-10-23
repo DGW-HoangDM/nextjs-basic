@@ -70,8 +70,7 @@ const ComponentTable = (props: Iprops) => {
       <AddNewModal
         modalAddNew={modalAddNew}
         setModalAddNew={setModalAddNew}
-      />
-
+      />      
     </>
   );
 }
